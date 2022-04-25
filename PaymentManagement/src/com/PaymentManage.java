@@ -31,9 +31,10 @@ public class PaymentManage {
 	 @FormParam("billId") String billId,
 	 @FormParam("cardNo") String cardNo,
 	 @FormParam("ccv") String ccv,
-	 @FormParam("expiredDate") String expiredDate)
+	 @FormParam("expiredDate") String expiredDate,
+	 @FormParam("payAmount") String payAmount)
 	{
-	 String output = PaymentObj.insertPayment(customerName, billId, cardNo, ccv, expiredDate);
+	 String output = PaymentObj.insertPayment(customerName, billId, cardNo, ccv, expiredDate, payAmount);
 	return output;
 	}
 	
@@ -52,7 +53,8 @@ public class PaymentManage {
 	 String cardNo = cObject.get("cardNo").getAsString();
 	 String ccv = cObject.get("ccv").getAsString();
 	 String expiredDate = cObject.get("expiredDate").getAsString();
-	 String output = PaymentObj.updatePayment(pID, customerName, billId, cardNo, ccv, expiredDate);
+	 String payAmount = cObject.get("payAmount").getAsString();
+	 String output = PaymentObj.updatePayment(pID, customerName, billId, cardNo, ccv, expiredDate, payAmount);
 	return output;
 	} 
 	
