@@ -16,7 +16,7 @@ public class Complaint {
 
 			// Provide the correct details: DBServer/DBName, username, password
 			con = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/electri?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",
+					"jdbc:mysql://localhost:3306/complaint?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",
 					"root", "");
 		} catch (Exception e) {
 			e.printStackTrace();
