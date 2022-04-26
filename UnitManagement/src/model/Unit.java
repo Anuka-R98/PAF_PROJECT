@@ -47,7 +47,7 @@ public class Unit {
 			con.close();
 			output = "Inserted successfully";
 		} catch (Exception e) {
-			output = "Error while inserting the unit.";
+			output = "Error while inserting the Bill.";
 			System.err.println(e.getMessage());
 		}
 		return output;
