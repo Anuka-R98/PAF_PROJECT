@@ -16,7 +16,7 @@ public class Customer {
 
 			// Provide the correct details: DBServer/DBName, username, password
 			con = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/electri?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",
+					"jdbc:mysql://localhost:3306/customers?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",
 					"root", "");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -61,7 +61,7 @@ public class Customer {
 				return "Error while connecting to the database for reading.";
 			}
 			// Prepare the html table to be displayed
-			output = "<table border=\"1\"><tr><th>ID</th><th>Customer Name</th><th>Customer Address</th><th>Customer NIC</th><th>Customer Email</th><th>Customer Contact No</th></tr>";
+			output = "<table border=\"1\"><tr><th>ID</th><th>Customer Name</th><th>Customer Address</th><th>Customer NIC</th><th>Customer Email</th><th>Customer Contact No</th><th>Date and time</th></tr>";
 			String query = "select * from custom";
 			Statement stmt = (Statement) con.createStatement();
 			ResultSet rs = ((java.sql.Statement) stmt).executeQuery(query);
@@ -73,6 +73,7 @@ public class Customer {
 				String customerNIC = rs.getString("customerNIC");
 				String customerEmail = rs.getString("customerEmail");
 				String customerPNO = rs.getString("customerPNO");
+				String date = rs.getString("date");
 
 				// Add into the html table
 				output += "<tr><td>" + cID + "</td>";
@@ -81,6 +82,7 @@ public class Customer {
 				output += "<td>" + customerNIC + "</td>";
 				output += "<td>" + customerEmail + "</td>";
 				output += "<td>" + customerPNO + "</td>";
+				output += "<td>" + date + "</td>";
 				
 			}
 			con.close();
