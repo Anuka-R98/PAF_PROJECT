@@ -101,9 +101,9 @@ public class Unit {
 			}
 
 			// create a prepared statement
-			String query = "UPDATE unit SET customerId=?,units=?,totalAmount=?" + "WHERE uID=?";
+						String query = "UPDATE unit SET customerId=?,units=?,totalAmount=?" + "WHERE uID=?";
 
-			PreparedStatement preparedStmt = con.prepareStatement(query);
+						PreparedStatement preparedStmt = con.prepareStatement(query);
 
 			// binding values
 			preparedStmt.setString(1, customerId);
@@ -141,7 +141,7 @@ public class Unit {
 			PreparedStatement preparedStmt = con.prepareStatement(query);
 
 			// binding values
-			preparedStmt.setInt(1, Integer.parseInt(uID));
+						preparedStmt.setInt(1, Integer.parseInt(uID));
 
 			// execute the statement
 			preparedStmt.execute();
