@@ -28,11 +28,11 @@ public class UnitManage {
 	@Produces(MediaType.TEXT_PLAIN)
 	public String insertUnit(
 			@FormParam("customerId") String customerId,			
-	 @FormParam("date") String date,
+	// @FormParam("date") String date,
 	 @FormParam("units") String units,
 	 @FormParam("totalAmount") String totalAmount)
 	{
-	 String output = UnitObj.insertUnit(customerId, date, units, totalAmount);
+	 String output = UnitObj.insertUnit(customerId, units, totalAmount);
 	return output;
 	}
 	
@@ -47,10 +47,10 @@ public class UnitManage {
 	//Read the values from the JSON object
 	 String uID = cObject.get("uID").getAsString();
 	 String customerId = cObject.get("customerId").getAsString();
-	 String date = cObject.get("date").getAsString();
+	// String date = cObject.get("date").getAsString();
 	 String units = cObject.get("units").getAsString();
 	 String totalAmount = cObject.get("totalAmount").getAsString();
-	 String output = UnitObj.updateUnit(uID, customerId, date, units, totalAmount);
+	 String output = UnitObj.updateUnit(uID, customerId, units, totalAmount);
 	return output;
 	} 
 	
