@@ -75,6 +75,7 @@ public class Complaint {
 				output += "<td>" + customerName + "</td>";
 				output += "<td>" + customerPNO + "</td>";
 				output += "<td>" + description + "</td>";
+				output += "<td>" + date + "</td>";
 				
 			}
 			con.close();
